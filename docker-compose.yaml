@@ -23,8 +23,10 @@ services:
       networks:
         - app-network
 
-    pgsql:
+    postgres:
       image: postgres:14.15-alpine3.21
+      ports:
+        - "5432:5432"
       restart: always
       environment:
         - POSTGRES_PASSWORD=password

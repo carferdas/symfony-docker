@@ -1,7 +1,7 @@
 FROM php:8.4-fpm-alpine
 
 # System Dependencies
-RUN apk add --no-cache curl wget libzip-dev postgresql-dev icu-dev bash git
+RUN apk add --no-cache curl wget libzip-dev postgresql-dev icu-dev bash git rabbitmq-c-dev
 
 # PHP Extensions
 RUN docker-php-ext-install zip intl pdo pdo_pgsql amqp

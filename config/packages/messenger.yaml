@@ -13,7 +13,6 @@ framework:
 
         routing:
             # Route your messages to the transports
-            'App\MessageExample': default
 
 # when@test:
 #    framework:
