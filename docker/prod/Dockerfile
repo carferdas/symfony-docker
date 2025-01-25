@@ -4,7 +4,7 @@ FROM php:8.4-fpm-alpine
 RUN apk add --no-cache curl wget libzip-dev postgresql-dev icu-dev bash git
 
 # PHP Extensions
-RUN docker-php-ext-install zip intl pdo pdo_pgsql
+RUN docker-php-ext-install zip intl pdo pdo_pgsql amqp
 
 docker-php-ext-enable opcache
 

@@ -36,6 +36,17 @@ services:
       networks:
         - app-network
 
+    rabbitmq:
+      image: rabbitmq:4-management-alpine
+      ports:
+        - "5672:5672"
+        - "15672:15672"
+      volumes:
+        - ./var/rabbitmq/data:/var/lib/rabbitmq
+        - ./var/rabbitmq/logs:/var/log/rabbitmq
+      networks:
+        - app-network
+
 networks:
     app-network:
       driver: bridge
