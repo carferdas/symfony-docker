@@ -6,7 +6,7 @@ RUN apk add --no-cache curl wget libzip-dev postgresql-dev icu-dev bash git auto
 # PHP Extensions
 RUN docker-php-ext-install zip intl pdo pdo_pgsql
 
-RUN pecl install xdebug amqp && docker-php-ext-enable xdebug amqp
+RUN pecl install xdebug amqp redis && docker-php-ext-enable xdebug amqp redis
 
 RUN mkdir -p /var/log \
     && touch /var/log/xdebug.log \
