@@ -9,10 +9,8 @@ RUN docker-php-ext-install zip intl pdo pdo_pgsql
 RUN pecl install xdebug amqp redis && docker-php-ext-enable xdebug amqp redis
 
 RUN mkdir -p /var/log \
-	&& mkdir -p /var/www/html/var \
-	&& mkdir -p /var/www/html/public \
     && touch /var/log/xdebug.log \
-    && chmod 777 /var/log/xdebug.log g
+    && chmod 777 /var/log/xdebug.log
 
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
